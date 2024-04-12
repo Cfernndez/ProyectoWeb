@@ -14,39 +14,54 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Logo</a>
+            <a class="navbar-brand" href="index.html">
+                <img src="img/compuspace.png" alt="Avatar Logo" style="width:50px;" class="rounded-pill">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="productos.html">Productos</a>
+                        <a class="nav-link" href="componentes.html">Componentes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">Marcas</a>
+                        <a class="nav-link" href="marcas.html">Marcas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contato.html">Contacto</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Administración</a>
+                            aria-haspopup="true" aria-expanded="false">Panel de control</a>
                         <div class="dropdown-menu bg-dark shadow drophovercustom" aria-labelledby="dropdownId">
                             <a class="dropdown-item drophovercustom" href="productos.html">Productos</a>
                             <a class="dropdown-item drophovercustom" href="pedidos.html">Pedidos</a>
                             <a class="dropdown-item drophovercustom" href="clientes.html">Clientes</a>
+                            <a class="dropdown-item drophovercustom" href="ventas.html">Ventas</a>
                         </div>
                     </li>
 
                 </ul>
-
-                <form class="d-flex">
-                    <input class="form-control me-2" type="text" placeholder="Buscar">
+                <form class="d-flex ">
+                    <input class="form-control me-2 " type="text" placeholder="Buscar">
                     <button class="btn btn-primary" type="button">Buscar</button>
                 </form>
+                <ul class="navbar-nav me-2">
+                    <li>
+                        <span id="sesionlink"><a class="nav-link text-light sesiontext" href="login.html">Iniciar
+                                sesión</a></span>
+                    </li>
+                    <li>
+                        <span id="sesionlink"><a class="nav-link text-light sesiontext"
+                                href="carrodecompras.html">Carro</a></span>
+                    </li>
+
+
+                </ul>
+
             </div>
         </div>
     </nav>

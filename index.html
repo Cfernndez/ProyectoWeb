@@ -10,14 +10,14 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/estilo.css">
-    <title>Inicio</title>
+    <title>Compu space</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img src="imagenes/compuspace.png" alt="Avatar Logo" style="width:50px;" class="rounded-pill">
+                <img src="img/compuspace.png" alt="Avatar Logo" style="width:50px;" class="rounded-pill">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="productos.html">Productos</a>
+                        <a class="nav-link" href="componentes.html">Componentes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="marcas.html">Marcas</a>
@@ -35,11 +35,12 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Administración</a>
+                            aria-haspopup="true" aria-expanded="false">Panel de control</a>
                         <div class="dropdown-menu bg-dark shadow drophovercustom" aria-labelledby="dropdownId">
                             <a class="dropdown-item drophovercustom" href="productos.html">Productos</a>
                             <a class="dropdown-item drophovercustom" href="pedidos.html">Pedidos</a>
                             <a class="dropdown-item drophovercustom" href="clientes.html">Clientes</a>
+                            <a class="dropdown-item drophovercustom" href="ventas.html">Ventas</a>
                         </div>
                     </li>
 
@@ -48,10 +49,10 @@
                     <input class="form-control me-2 " type="text" placeholder="Buscar">
                     <button class="btn btn-primary" type="button">Buscar</button>
                 </form>
-                <ul  class="navbar-nav me-2">
+                <ul class="navbar-nav me-2">
                     <li>
-                        <span id="sesionlink"><a class="nav-link text-light sesiontext"
-                                href="login.html">Iniciar sesión</a></span>
+                        <span id="sesionlink"><a class="nav-link text-light sesiontext" href="login.html">Iniciar
+                                sesión</a></span>
                     </li>
                     <li>
                         <span id="sesionlink"><a class="nav-link text-light sesiontext"
@@ -95,46 +96,47 @@
 
                 </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
 
         <!-- Left and right controls/icons -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-
+      
+        <br>
         <div class="container">
             <!--  -->
             <div class="row mt-2">
-                <div class="col-sm-4 p-3">
+                <div class="col-sm-2 p-3">
                     <div class="card p-2 shadow">
-                        <img class="card-img-top" src="img/electrica.jfif" alt="Card image">
+                        <img class="card-img-top" src="img/Procesadores/intel-i7-10700k.jpg" alt="Card image" >
                         <div class="card-body">
-                            <h4 class="card-title">Anguila Electrica Roll</h4>
-                            <p class="card-text">Un sabor electrizante</p>
+                            <h4 class="card-title"></h4>
+                            <p class="card-text"></p>
                             <a href="carrodecompras.html" class="btn btn-primary">Agregar al carro</a>
-                            <a href="carrodecompras.html" class="btn btn-primary">Agregar al carro</a>
+                            
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4 p-3">
+                <div class="col-sm-2 p-3">
                     <div class="card p-2 shadow">
-                        <img class="card-img-top" src="img/pulporoll.jfif" alt="Card image">
+                        <img class="card-img-top" src="img/memoria_ram/ramg.gskill.jpg" alt="Card image">
                         <div class="card-body">
-                            <h4 class="card-title">Pulpo venenoso Roll</h4>
-                            <p class="card-text">Abrazadoramente delicioso</p>
+                            <h4 class="card-title">RAM G.SKILL</h4>
+                            <p class="card-text"></p>
                             <a href="#" class="btn btn-primary">Agregar al pedido</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4 p-3">
+                <div class="col-sm-2 p-3">
                     <div class="card p-2 shadow">
-                        <img class="card-img-top" src="img//sushipleto.jfif" alt="Card image">
+                        <img class="card-img-top" src="img/gpu/geforce4090.jpg" alt="Card image">
                         <div class="card-body">
-                            <h4 class="card-title">Sushipleto</h4>
-                            <p class="card-text">Típica picanteria Shilena</p>
+                            <h4 class="card-title">NVIDIA RTX 4090 </h4>
+                            <p class="card-text"></p>
                             <a href="#" class="btn btn-primary">Agregar al pedido</a>
                         </div>
                     </div>
@@ -143,10 +145,13 @@
 
 
 
+
         </div>
 
     </div>
-
+    <footer>
+        <!-- place footer here -->
+    </footer>
 
 </body>
 
