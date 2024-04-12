@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Crear cuenta</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">Marcas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">Contacto</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Administración</a>
+                        <div class="dropdown-menu bg-dark shadow drophovercustom" aria-labelledby="dropdownId">
+                            <a class="dropdown-item drophovercustom" href="productos.html">Productos</a>
+                            <a class="dropdown-item drophovercustom" href="pedidos.html">Pedidos</a>
+                            <a class="dropdown-item drophovercustom" href="clientes.html">Clientes</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <form class="d-flex">
+                    <input class="form-control me-2" type="text" placeholder="Buscar">
+                    <button class="btn btn-primary" type="button">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center mb-4">Formulario de Registro</h2>
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="firstName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="Ingrese su nombre"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="lastName" class="form-label">Apellido</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Ingrese su apellido"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="rut" class="form-label">RUT</label>
+                        <input type="text" class="form-control" id="rut" placeholder="Ingrese su RUT" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="address" placeholder="Ingrese su dirección"
+                            required>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="region" class="form-label">Región</label>
+                                <select class="form-select" id="region" required>
+                                    <option value="">Seleccione una región</option>
+                                    <option value="1">Región de Arica y Parinacota</option>
+                                    <option value="2">Región de Tarapacá</option>
+                                    <option value="3">Región de Antofagasta</option>
+                                    <!-- Agrega más opciones según tus necesidades -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="comuna" class="form-label">Comuna</label>
+                                <select class="form-select" id="comuna" required>
+                                    <option value="">Seleccione una comuna</option>
+                                    <!-- Las opciones de comuna se llenarán dinámicamente según la región seleccionada -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña"
+                            required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Registrarse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Definir las opciones de comunas según la región seleccionada
+        document.getElementById('region').addEventListener('change', function () {
+            var region = this.value;
+            var comunaSelect = document.getElementById('comuna');
+            // Limpiar las opciones actuales
+            comunaSelect.innerHTML = '<option value="">Seleccione una comuna</option>';
+            // Llenar las opciones de comuna según la región seleccionada
+            if (region === '1') { // Región de Arica y Parinacota
+                comunaSelect.innerHTML += '<option value="1">Arica</option>';
+                comunaSelect.innerHTML += '<option value="2">Camarones</option>';
+                // Agrega más opciones según las comunas de la región
+            } else if (region === '2') { // Región de Tarapacá
+                comunaSelect.innerHTML += '<option value="3">Iquique</option>';
+                comunaSelect.innerHTML += '<option value="4">Alto Hospicio</option>';
+                // Agrega más opciones según las comunas de la región
+            } else if (region === '3') { // Región de Antofagasta
+                comunaSelect.innerHTML += '<option value="5">Antofagasta</option>';
+                comunaSelect.innerHTML += '<option value="6">Mejillones</option>';
+                // Agrega más opciones según las comunas de la región
+            }
+            // Agrega más bloques "else if" según las regiones que desees manejar
+        });
+    </script>
+</body>
+
+</html>
