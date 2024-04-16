@@ -68,26 +68,84 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-8">
-                <h2>Carro (0 items)</h2>
-                <!-- Aquí iría el contenido del carro -->
+                <h2>Carro</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Procesador Intel® Core™ i7-10700K</h5>
+                        <img class="card-img-top" src="img/Procesadores/intel-i7-10700k.jpg" alt="Card image"  style="width:20%">
+                        <p class="card-text">Cantidad de núcleos. 8 ; Total de subprocesos. 16 ; Frecuencia turbo máxima. 5.10 GHz</p>
+                        <p class="card-text">$200.990</p>
+
+                        <!-- Botón para aumentar cantidad -->
+                        <button class="btn btn-secondary" onclick="decrementQuantity()">-</button>
+
+                        <!-- Campo para mostrar la cantidad de productos -->
+                        <input type="text" class="form-control d-inline-block w-25 mx-2 text-center" id="quantityInput" value="1">
+
+                        <!-- Botón para disminuir cantidad -->
+                        <button class="btn btn-secondary" onclick="incrementQuantity()">+</button>
+
+                        <button class="btn btn-danger">Eliminar</button>
+                        
+                    </div>
+                    <button class=" col-md-4 btn btn-warning">Vaciar Carro de Compras</button>
+                </div>
             </div>
             <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">
-                        Resumen (0 productos)
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Pago con transferencias</h5>
-                        <p class="card-text">Transferencia y Banco Estado</p>
-                        <h5 class="card-title">Otros medios de pago</h5>
-                        <p class="card-text">Webpay/Onepay</p>
-                        <h4 class="card-title">TOTAL $0</h4>
-                        <a href="#" class="btn btn-primary">Iniciar pago</a>
-                    </div>
-                </div>
+                <h2>Resumen de la compra </h2>
+                <ul class="list-group">
+                    
+                    <li class="list-group-item">Total Precio Normal $200.990</li>
+                
+                </ul>
+                <a href="index.html" class="btn btn-success mt-3" >Seguir Comprando</a>
+                <a href="tipo_de_entrega.html" class="btn btn-primary mt-3">Pagar</a>
             </div>
         </div>
     </div>
+    <br>
+    <footer class="bg-dark text-white">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Enlaces de navegación</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="contato.html">Contacto</a></li>
+                        <li><a href="#">Términos de servicio</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Información de contacto</h5>
+                    <p>Dirección: 123 Calle Principal</p>
+                    <p>Email: info@ejemplo.com</p>
+                    <p>Teléfono: +123456789</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces a redes sociales</h5>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href=""><i class="fab fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>© 2024 Compuspace. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <ul class="list-inline">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+    </footer>
+
 
     
 </body>
