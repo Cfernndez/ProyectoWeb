@@ -6,9 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="css/estilo.css">
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="https://kit.fontawesome.com/58e5f1ed41.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/validarlogin.js"></script>
+
   <title>login</title>
 
 </head>
@@ -66,21 +70,22 @@
     </div>
   </nav>
   <img src="img/compuspace.png" alt="logo compuspace" class="mx-auto d-block" height="250">
-  <form action="index.html" class="container px-5" style="width: 500px;">
+  <form class="container px-5" style="width: 500px;" action="" method="get" onsubmit="return validarFormulario()">
     <div class="mx-5">
       <label for="email" class="form-label">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      <input type="email" class="form-control" id="mail" placeholder="Enter email" name="mail" required>
     </div>
     <div class="mx-5">
-      <label for="pwd" class="form-label">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+      <label for="password1" class="form-label">Password:</label>
+      <input type="password" class="form-control" id="password1" placeholder="Enter password" name="password1" required>
+      <button class="btn btn-outline-secondary" type="button" id="showPassword1">Mostrar</button>
     </div>
     <div class="form-check mx-5 my-3">
       <label class="form-check-label text-light">
         <input class="form-check-input" type="checkbox" name="remember"> Remember me
       </label>
     </div>
-    <button type="submit" class="btn btn-primary mx-5" >Submit</button>
+    <input type="submit" class="btn btn-primary mx-5" value="Ingresar">
   </form>
   <div class="text-center mt-3">
     <a href="recuperarclave.html" class="nodecolink">¿Olvidaste tu contraseña?</a>
@@ -88,7 +93,23 @@
     <a href="registrar.html" class="nodecolink">Crear una cuenta</a>
 
   </div>
-  
+  <script>
+    $(document).ready(function () {
+      $('#showPassword1').on('click', function () {
+        var passwordField = $('#password1');
+        var passwordFieldType = passwordField.attr('type');
+        if (passwordFieldType === 'password') {
+          passwordField.attr('type', 'text');
+          $(this).text('Ocultar');
+        } else {
+          passwordField.attr('type', 'password');
+          $(this).text('Mostrar');
+        }
+      });
+
+
+    });
+  </script>
 </body>
 
 </html>

@@ -5,10 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/estilo.css">
+    <script src="https://kit.fontawesome.com/58e5f1ed41.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/validarnom.js"></script>
+
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+
+
     <title>Crear cuenta</title>
 </head>
 
@@ -48,10 +58,10 @@
                     <input class="form-control me-2 " type="text" placeholder="Buscar">
                     <button class="btn btn-primary" type="button">Buscar</button>
                 </form>
-                <ul  class="navbar-nav me-2">
+                <ul class="navbar-nav me-2">
                     <li>
-                        <span id="sesionlink"><a class="nav-link text-light sesiontext"
-                                href="login.html">Iniciar sesión</a></span>
+                        <span id="sesionlink"><a class="nav-link text-light sesiontext" href="login.html">Iniciar
+                                sesión</a></span>
                     </li>
                     <li>
                         <span id="sesionlink"><a class="nav-link text-light sesiontext"
@@ -68,31 +78,37 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h2 class="text-center mb-4">Formulario de Registro</h2>
-                <form class="mb-3" action="registrar.html" method="get">
+                <form class="mb-3" onsubmit="return validarForm()" action="" method="get">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="firstName" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Ingrese su nombre"
-                                    required>
+                                <input type="text" class="form-control" id="nombre" name="firstName"
+                                    placeholder="Ingrese su nombre" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="lastName" class="form-label">Apellido</label>
-                                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Ingrese su apellido"
-                                    required>
+                                <input type="text" class="form-control" id="apellidos" name="lastName"
+                                    placeholder="Ingrese su apellido" required>
                             </div>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="rut" class="form-label">RUT</label>
-                        <input type="text" class="form-control" id="rut" name="rut" placeholder="Ingrese su RUT" required>
+                        <input name="rut" id="rut" type="text" class="input-validate-rut form-control"
+                            placeholder="Ingrese un RUT" onkeypress="return isNumber(event)" oninput="checkRut(this) "
+                            required>
+
                     </div>
+                    <p id="alerta">
+                        <span id="mensaje"></span>
+                    </p>
                     <div class="mb-3">
                         <label for="email" class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico"
-                            required>
+                        <input type="email" class="form-control" id="mail" name="mail"
+                            placeholder="Ingrese su correo electrónico" required>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -103,7 +119,7 @@
                                     <option value="1">Región de Arica y Parinacota</option>
                                     <option value="2">Región de Tarapacá</option>
                                     <option value="3">Región de Antofagasta</option>
-                                    <!-- Agrega más opciones según tus necesidades -->
+
                                 </select>
                             </div>
                         </div>
@@ -112,24 +128,33 @@
                                 <label for="comuna" class="form-label">Comuna</label>
                                 <select class="form-select" id="comuna" name="comuna" required>
                                     <option value="">Seleccione una comuna</option>
-                                    <!-- Las opciones de comuna se llenarán dinámicamente según la región seleccionada -->
+
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="address" class="form-label">Dirección</label>
-                        <input type="text" class="form-control" id="address" name="address" placeholder="Ingrese su dirección"
-                            required>
+                        <input type="text" class="form-control" id="address" name="address"
+                            placeholder="Ingrese su dirección" required>
+
                     </div>
-                    
+
                     <div class="mb-3">
-                        <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su contraseña"
-                            required>
+                        <label for="password1" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password1" name="password1"
+                            placeholder="Ingrese su contraseña" required>
+                        <button class="btn btn-outline-secondary" type="button" id="showPassword1">Mostrar</button>
                     </div>
+                    <div class="mb-3">
+                        <label for="password2" class="form-label">Reingresar Contraseña</label>
+                        <input type="password" class="form-control" id="password2" name="password2"
+                            placeholder="Ingrese su contraseña" required>
+                        <button class="btn btn-outline-secondary" type="button" id="showPassword2">Mostrar</button>
+                    </div>
+                    <div id="message" class="error-message"></div>
                     <div class="text-center">
-                        <input type="submit" class="btn btn-primary" value="Registrarse">
+                        <input type="submit" class="btn btn-success text-light  " value="Registrarse">
                     </div>
                 </form>
             </div>
@@ -175,6 +200,34 @@
             </div>
         </div>
     </footer>
+    <script src="js/validarrut.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#showPassword1').on('click', function () {
+                var passwordField = $('#password1');
+                var passwordFieldType = passwordField.attr('type');
+                if (passwordFieldType === 'password') {
+                    passwordField.attr('type', 'text');
+                    $(this).text('Ocultar');
+                } else {
+                    passwordField.attr('type', 'password');
+                    $(this).text('Mostrar');
+                }
+            });
+
+            $('#showPassword2').on('click', function () {
+                var passwordField = $('#password2');
+                var passwordFieldType = passwordField.attr('type');
+                if (passwordFieldType === 'password') {
+                    passwordField.attr('type', 'text');
+                    $(this).text('Ocultar');
+                } else {
+                    passwordField.attr('type', 'password');
+                    $(this).text('Mostrar');
+                }
+            });
+        });
+    </script>
     <script>
         // Definir las opciones de comunas según la región seleccionada
         document.getElementById('region').addEventListener('change', function () {
@@ -199,6 +252,8 @@
             // Agrega más bloques "else if" según las regiones que desees manejar
         });
     </script>
+
+
 </body>
 
 </html>
