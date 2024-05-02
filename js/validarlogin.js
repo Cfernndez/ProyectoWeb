@@ -20,3 +20,18 @@ function validarFormulario() {
 
     return true;
   }
+
+
+  function validarclave() {
+    var email = document.getElementById('mail').value;
+    
+    // Expresión regular para validar el formato del correo electrónico
+    var emailRegex =  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (!emailRegex.test(email)) {
+      alert('Ingrese una dirección de correo electrónico válida.');
+      return false;
+    }
+
+    return true;
+  }
