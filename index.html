@@ -10,6 +10,8 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/custom.js" defer></script>
     <title>Compuspace</title>
 </head>
 
@@ -110,7 +112,7 @@
             <div class="row mt-2">
                 <div class="col-sm-2 p-3">
                     <div class="card p-3 shadow">
-                        <img class="card-img-top" src="img/Procesadores/intel-i7-10700k.jpg" alt="Card image" >
+                        <img class="card-img-top" src="img/Procesadores/intel-i7-10700k.jpg" alt="Card image">
                         <div class="card-body">
                             <h4 class="card-title">Procesador i7-10700K</h4>
                             <p class="card-text"></p>
@@ -146,7 +148,7 @@
     <footer class="bg-dark text-white">
         <div class="container py-4">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <h5>Compuspace</h5>
                     <ul class="list-unstyled">
                         <li><a href="index.html">Inicio</a></li>
@@ -155,13 +157,13 @@
                         <li><a href="#">Política de privacidad</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <h5>Información de contacto</h5>
                     <p>Dirección: 123 Calle Principal</p>
                     <p>Email: compuspace@ejemplo.com</p>
                     <p>Teléfono: +123456789</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <h5>Enlaces a redes sociales</h5>
                     <ul class="list-inline">
                         <li class="list-inline-item"><a href=""><i class="fab fa-facebook"></i></a></li>
@@ -169,7 +171,27 @@
                         <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
+                <div class="col-md-3">
+                    <section class="weather-content">
+                        <h1>Buscador del clima</h1>
+                        <div class="result">
+                            <p>Agrege cuidad y pais</p>
+    
+                        </div>
+                        <form action="" method="POST" class="get-weather">
+                            <input type="text" name="city" id="city" placeholder="Escribe tu cuidad...">
+                            <select name="" id="country">
+                                <option disabled selected value="">Selecciona el Pais</option>
+    
+                                <option value="CL">Chile</option>
+    
+                            </select>
+                            <input type="submit" name="" id="" value="Obtener el clima">
+                        </form>
+                    </section>
+                </div>
             </div>
+            
             <hr>
             <div class="row">
                 <div class="col-md-6">
@@ -177,10 +199,11 @@
                 </div>
                 <div class="col-md-6 text-md-right">
                     <ul class="list-inline">
-    
+
                     </ul>
                 </div>
             </div>
+
         </div>
     </footer>
 
